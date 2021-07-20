@@ -10,8 +10,6 @@ MIN_MATCH_COUNT = 10
 def resize(img, width , height):
     return cv2.resize(img, (width,height), interpolation = cv2.INTER_AREA)
 
-#frame_rgb = cv2.imread("steve_frame.png")# trainImage
-
 cap = cv2.VideoCapture('video_steve.mp4')
 steve = cv2.imread("steve_jobs.png")# queryImage
 mona_liza = cv2.imread("mona_liza.png")# cover mona liza
@@ -35,13 +33,6 @@ while(cap.isOpened()):
         # find the keypoints and descriptors with SIFT
         kp_frame, des_frame = sift.detectAndCompute(frame,None)
 
-        #test = cv2.drawKeypoints(frame_rgb, kp_frame, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
-
-        #plt.figure(figsize=figsize)
-        #plt.imshow(test)
-        #plt.title("keypoints")
-        #plt.show()
-
         # BFMatcher with default params
         bf = cv2.BFMatcher()
         matches = bf.knnMatch(des_steve,des_frame, k=2)
@@ -56,11 +47,6 @@ while(cap.isOpened()):
         # cv2.drawMatchesKnn expects list of lists as matches.
         im_matches = cv2.drawMatchesKnn(steve,kp_steve,frame,kp_frame,
                                         good_match[0:30],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-
-        #plt.figure(figsize=(20, 20))
-        #plt.imshow(im_matches)
-        #plt.title("keypoints matches")
-        #plt.show()
 
         h,w = steve.shape[:2]
         mona_resize = cv2.resize(mona_liza, (w, h))
@@ -81,15 +67,6 @@ while(cap.isOpened()):
             maskInv = cv2.bitwise_not(maskNew)
             imgAug = cv2.bitwise_and(frame, frame, mask = maskInv )
             imgAug = cv2.bitwise_or(imgwarp, imgAug)
-
-
-            #plt.imshow(imgAug)
-            #plt.imshow(maskInv)
-            #plt.imshow(frame_rgb)
-            #plt.imshow(imgwarp)
-            #plt.imshow(imgAug)
-            #plt.title("naive warping")
-            #plt.show()
 
             print("before, ", frame.shape)
             new_imgAug = resize(imgAug, frame_size[1],frame_size[0])
