@@ -2,7 +2,7 @@
 
 [![Feature detection](https://yt-embed.herokuapp.com/embed?v=2Z2LyaOJzBc)](https://www.youtube.com/watch?v=2Z2LyaOJzBc "Feature detection")
 
-In this project i used SIFT, a feature detection algorithm in computer vision to detect and describe local features in images, and camera calibration to determine the location of the camera in the scene.
+In this project I used SIFT, a feature detection algorithm in computer vision to detect and describe local features in images, and camera calibration to determine the location of the camera in the scene.
 With the help of the this techniques I was able to replace an object in an image with another.
 After finding of the camera parameters with chessboard images processing I implemented the following steps:
 
