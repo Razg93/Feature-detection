@@ -1,1 +1,1 @@
-# Augmented-reality
+# Augmented-reality - Feature detection
