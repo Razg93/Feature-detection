@@ -3,7 +3,7 @@
 [![Feature detection](https://yt-embed.herokuapp.com/embed?v=2Z2LyaOJzBc)](https://www.youtube.com/watch?v=2Z2LyaOJzBc "Feature detection")
 
 In this project I used SIFT, a feature detection algorithm in computer vision to detect and describe local features in images, and camera calibration to determine the location of the camera in the scene.
-With the help of the this techniques I was able to replace an object in an image with another.
+With the help of the this techniques I was able to replace the Steve Jobs book with Mona Liza image.
 After finding of the camera parameters with chessboard images processing I implemented the following steps:
 
 1.Dividing the image to frames and finding the same tamplate as the replacment object in the frame.
@@ -23,7 +23,7 @@ system to the normalized image coordinate system and warping the replacement ima
 
 ![image](https://user-images.githubusercontent.com/50642442/126389210-06237775-e813-4c60-901b-afac3c0da2c4.png) ![image](https://user-images.githubusercontent.com/50642442/126389244-ca7880a0-9fbf-4c8e-925d-64d3b076835c.png)
 
-5.Finally merge the two images
+5.Finally merge the two images.
 
 ![image](https://user-images.githubusercontent.com/50642442/126389379-9f107c49-802f-4611-acfb-122304528bbb.png)
 
