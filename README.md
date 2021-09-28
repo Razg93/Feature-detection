@@ -4,7 +4,7 @@
 
 In this project I used SIFT, a feature detection algorithm in computer vision to detect and describe local features in images, and camera calibration to determine the location of the camera in the scene.
 Using these techniques I was able to replace the Steve Jobs book with Mona Liza image.
-After finding of the camera parameters with chessboard images processing I implemented the following steps:
+After finding the camera parameters with chessboard images processing I implemented the following steps:
 
 1.Dividing the image to frames and finding the same tamplate as the replacement object in the frame.
 
